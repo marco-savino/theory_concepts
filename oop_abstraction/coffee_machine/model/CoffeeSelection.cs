@@ -1,4 +1,4 @@
 public enum CoffeeSelection
 {
-    FILET_COFFEE, ESPRESSO, CAPPUCCINO
+    FILTER_COFFEE, ESPRESSO, CAPPUCCINO
 }

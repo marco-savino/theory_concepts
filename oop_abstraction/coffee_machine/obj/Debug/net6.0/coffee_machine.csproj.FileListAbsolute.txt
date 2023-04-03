@@ -1,0 +1,15 @@
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\bin\Debug\net6.0\coffee_machine.exe
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\bin\Debug\net6.0\coffee_machine.deps.json
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\bin\Debug\net6.0\coffee_machine.runtimeconfig.json
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\bin\Debug\net6.0\coffee_machine.dll
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\bin\Debug\net6.0\coffee_machine.pdb
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.csproj.AssemblyReference.cache
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.GeneratedMSBuildEditorConfig.editorconfig
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.AssemblyInfoInputs.cache
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.AssemblyInfo.cs
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.csproj.CoreCompileInputs.cache
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.dll
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\refint\coffee_machine.dll
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.pdb
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\coffee_machine.genruntimeconfig.cache
+F:\stuff\back_to_code\theory_concepts\oop_abstraction\coffee_machine\obj\Debug\net6.0\ref\coffee_machine.dll
