@@ -13,3 +13,12 @@ CoffeeMachine coffeeMachine = new CoffeeMachine(beans);
 Coffee coffee = coffeeMachine.BrewCoffee(CoffeeSelection.ESPRESSO);
 
 Console.WriteLine("Coffee is ready! Here's your cup: selection {0}, quantity {1}", coffee.Selection, coffee.Quantity);
+
+/*
+
+Conclusioni:
+
+L'astrazione consiste nel permettere all'utente (Program.cs) di utilizzare la CoffeeMachine senza sapere come è stato preparato il caffè
+
+
+*/

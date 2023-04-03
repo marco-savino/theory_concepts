@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{AgileLab}
+\author{Marco Savino}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+    Step per entrare in AgileLab:
+    \begin{enumerate}
+        \item Colloquio conoscitivo HR
+        \item Test di conoscenza tecnica
+        \item Intervista tecnica
+    \end{enumerate}
+    
+\section{Preparazione al test}
+    Il test è diviso in tre macro aree:
+    \begin{itemize}
+        \item Concetti di software engineering
+        \item Database
+        \item Sistemi distribuiti (engine)
+        \item Machine learning (in minor parte)
+    \end{itemize}
+    \subsection{Software Engineering}
+        \subsubsection{Programmazione orientata agli oggetti}
+            La programmazione orientata agli oggetti è un paradigma di programmazione basato sul concetto di oggetto, ovvero un entità che può contenere dati e operazioni. I dati sono contenuti in campi conosciuti come attributi e le operazioni sono codice scritto in forma di procedure chiamate metodi.
+            \paragraph{Classi} Per poter applicare il concetto di oggetto, è necessario prima definirlo: un oggetto viene definito attraverso una classe. La classe serve a stabilire il formato dei dati e le operazioni disponibili dell'oggetto creato tramite essa. Gli oggetti sono quindi delle istanze, ovvero la manifestazione fisica dei dati e delle operazioni descritte all'interno nella classe.
+            \paragraph{Data Abstraction} Il Data Abstraction è un design pattern per il quale i dati sono visibili solo alle funzioni con cui sono semanticamente collegati. Di conseguenza, si integra il Data Hiding come principio di design nei linguaggi di programmazione ad oggetti. Ad esempio, in Java si esplicita il grado di visibilità di un attributo o di un metodo attraverso le parole chiave private, protected e public.
+            \paragraph{Astrazione} L'Astrazione è un concetto per il quale si nascondono all'utente i dettagli dell'implementazione, permettendo a questo di concentrarsi sullo sviluppo della logica al di sopra dell'astrazione fornita senza doversi preoccupare della sua implementazione.\\
+            \textit{Esempio - Una macchina del caffè rappresenta un'astrazione per l'utente: questo non sa come viene prodotto fisicamente il caffè, ma conosce quanto basta per comandare alla macchinetta di produrne uno. In questo modo, è persino possibile cambiare il meccanismo interno della macchina senza che l'utente ne debba essere a conoscenza.}
+            
+            \paragraph{Polimorfismo} Il polimorfismo consiste nel fornire una stessa interfaccia a entità di tipi differenti, in modo da dare l'impressione che uno stesso oggetto sia in grado di avere funzioni differenti. Ne esistono di tre tipi: il polimorfismo ad-hoc, il polimorfismo parametrico e il polimorfismo di sottotipo (o di inclusione). Il primo si riferisce a funzioni che possono essere applicate a parametri di tipi differenti, ma che si comportano diversamente a seconda di questi: questo concetto è identificato con il termine di \textit{overload}. Quello parametrico permette a un tipo di dato o a una funzione di essere scritto in modo generale, in modo che possa trattare i valori indipendentemente dal loro tipo. L'ultimo, il polimorfismo di sottotipo, enuncia che una sottoclasse può utilizzare un metodo della sua super-classe e questo potrebbe avere un comportamento diverso: ciò viene indicato come \textit{override} del metodo e rimane in accordo con il Principio di Sostituzione di Liskov.
+            \paragraph{Incapsulamento} Per definizione, l'incapsulamento consiste nel combinare metodi e attributi in un'unica unità, come una classe. Grazie a questo concetto, è possibile nascondere la rappresentazione interna dei dati o il loro stato, rendendoli accessibili solo tramite metodi appositi. Questa tecnica è chiamata \textit{Information Hiding}.
+            \paragraph{Ereditarietà} L'ereditarietà è il meccanismo attraverso il quale la definizione di una classe deriva da quella di un'altra classe. La prima prende così il nome di sottoclasse e la seconda di super-classe. La sottoclasse può utilizzare lo stesso formato dei dati e le stesse operazioni della sua super-classe e in più ha la possibilità di definirne dei propri a sua volta.
+        \subsubsection{S.O.L.I.D.}
+            Questo acronimo indica un gruppo di cinque principi da seguire, affinché il codice sia più leggibile e più facile da cambiare in caso di necessità.
+            \paragraph{S - Single Resposibilty Principle} \textit{Ogni classe è responsabile di un singolo compito; se cambia il compito, allora cambia anche la classe. Questa deve essere l'unica ragione per cui la classe cambia.}\\
+            Esempio: Una classe che si occupa di tenere conto del punteggio di un gioco, non si deve occupare di altro. Questa cambia solo se cambiano le regole del gioco
+            \paragraph{O - Open-Closed Principle} \textit{Una classe deve essere aperta all'utilizzo da parte di altre classi, come sua estensione, e chiusa alla possibilità di esser cambiata da altre classi.}\\
+            Questo principio si applica attraverso l'Ereditarietà e l'override: creando una sottoclasse ad hoc e sovrascrivendo il metodo di interesse in partenza, si evita di alterare cambiare la classe madre, proprio grazie all'estensione della stessa.
+            \paragraph{L - Liskov Substitution Principle} \textit{Una proprietà dell'oggetto X di una classe T deve essere valida anche per un oggetto Y di classe S, dove S è sottoclasse di T.}\\
+            Questo implica che, in un programma, le istanze di una classe dovrebbero essere sempre sostituibili dalle istanze di una sua sottoclasse. A livello pratico, ogni suo metodo deve poter accettare gli argomenti del corrispettivo metodo della classe madre e ritornare lo stesso tipo di valore. In alcuni casi però, questo ha dei limiti: una classe Rettangolo crea un'istanza grazie agli argomenti base e altezza, ma una sua sottoclasse Quadrato utilizzerebbe come argomento solo il lato; in questo caso, per rispettare il principio la classe Quadrato non deve essere sottoclasse di Rettangolo.
+            \paragraph{I - Interface Segregation Principle} \textit{"Un cliente non dovrebbe essere costretto a dipendere da un'interfaccia che non usa" - Robert C. Martin}\\
+            Non bisogna aggiungere funzionalità che non vengono utilizzate a una interfaccia. Questo perché, aggiornando l'interfaccia, bisogna aggiornare anche tutto ciò che ne dipende. L'ideale è quindi creare un'interfaccia a parte che non abbia influenze su quella di partenza.
+            \paragraph{D - Dependency Inversion Principle} \textit{Moduli di altro livello non devono dipendere da moduli di basso livello, ed entrambi devono basarsi su astrazioni; le astrazioni non devono dipendere dai dettagli, ma i dettagli dalle astrazioni.}\\
+            Si dà importanza al disaccoppiamento fra moduli: l'implementazione di questi potrà cambiare senza influire sulla loro comunicazione. A livello pratico, si applica la cosiddetta \textit{Dependency Injection}.
+        \subsubsection{Sviluppo software}
+            \paragraph{Ciclo di vita del software} il \textit{Software Development Life Cycle} viene definito con 6 fasi:
+                \begin{enumerate}
+                    \item \textit{Raccolta dei requisiti}: "Qual è il problema attuale?"
+                    \item \textit{Pianificazione}: "Che cosa vogliamo?"
+                    \item \textit{Progettazione}: "Come otteniamo quello che vogliamo?"
+                    \item \textit{Implementazione}: "Creiamo quello che vogliamo"
+                    \item \textit{Test e integrazione}: "Abbiamo ottenuto quello che volevamo? Funziona?"
+                    \item \textit{Manutenzione}: "Miglioriamo quello che abbiamo ottenuto"
+                \end{enumerate}
+                Queste fasi possono essere gestite in numerosi modi diversi, definiti come modelli:
+                \begin{itemize}
+                    \item \textit{Modello a cascata}: le fasi vengono svolte linearmente una dopo l'altra.
+                    \item \textit{Modello a V}: estensione del modello a cascata, testando però dopo ogni fase.
+                    \item \textit{Modello iterativo}: si crea una versione base che viene migliorata tramite frequenti aggiornamenti uno dopo l'altro.
+                    \item \textit{Modello agile}: il prodotto è gestito a cicli e con frequenti aggiornamenti, per  migliorare in base al feedback dell'utente.
+                    \item \textit{Modello a spirale}: Estensione del modello iterativo, vengono ripetute tutte le fasi del SDLC
+                    \item \textit{Big Bang Model}: Viene lasciato tutto in mano a sviluppatori esperti, che si concentrano da subito sull'implementazione
+                \end{itemize}
+            \paragraph{Testing} Ci sono diversi tipi di test, che servono a garantire il  corretto funzionamento del dofice in tutte le occasioni:
+                 \begin{itemize}
+                     \item \textit{Analisi statica}: esamina tutti i possibili comportamenti del codice che potrebbero manifestarsi a run-time. Include sempre la revisione del codice, l'ispezione del codice, l'analisi algoritmica e la prova di correttezza.
+                     \item \textit{Analisi dinamica}: coinvolge l'esecuzione del codice per esporre errori e malfunzionamenti.
+                     \item \textit{Black box}: si testa il codice attraverso input e output, ignorando il modo in cui è implementato il codice.
+                     \item \textit{White box}: presupponendo la conoscenza dell'implementazione, si effettuano i test concentrandosi sulla struttura del codice e sulla logica di business (vedi \textit{statement coverage, branch coverage, path coverage}). 
+                     \item \textit{Scripted box}: specifico test basato su una serie di step prefissati pensato per validare un preciso requisito.
+                     \item \textit{Exploratory}: il tester simula il comportamento dell'utente finale e si basa sull'intuito per rilevare problemi nascosti o non previsti in precedenza.
+                     \item \textit{Manual}: viene eseguito da persone.
+                     \item \textit{Automated}: viene eseguito da software automatizzati.
+                 \end{itemize}
+        \subsubsection{Strutture dati}
+            \paragraph{Binary Tree}
+        \subsubsection{Altri concetti}
+            \paragraph{Dependency Injection} A partire da un'interfaccia, che ha un livello di astrazione più alto di una classe, si applica la dipendenza, ovvero la classe che la implementa. La dipendenza può cambiare senza che l'interfaccia ne risenta, persino a run-time. In questo caso, si parla di \textbf{Binding Dinamico}.
+            \paragraph{Inversion of Control} Principio di programmazione secondo cui il controllo del flusso dello sviluppo di una applicazione viene lasciato alla piattaforma che si utilizza, la quale prende il nome di \textbf{framework}. I vantaggi pirncipali consistono nel riutilizzo del codice e nel permettere all'utente di concentrarsi sull'implementazione dei moduli, piuttosto che sulla loro comunicazione. La Dependency Injection è un modo di implementare il principio di Inversion of Control.
+    \subsection{Database}
+        \subsubsection{A.C.I.D.}
+            Proprietà che devono avere delle transazioni in un database.
+            \paragraph{A - Atomic} Una transazione deve essere un'unità "atomica", ovvero non può essere suddivisa in più parti e, una volta iniziate, deve essere portata a termine.
+            \paragraph{C - Consistency} La transazione deve rispettare i vincoli di integrità del database.
+            \paragraph{I - Isolation} Una transazione deve essere eseguita in modo isolato e indipendente dalle altre.
+            \paragraph{D - Durability} Definibile anche come \textit{persistenza}, implica che, una volta che la transazione abbia effettuato una \textit{commit}, i cambiamenti apportati devono essere conservati. 
+        \subsubsection{Relazioni}
+            \paragraph{Uno a uno} A un record di una tabella, corrisponde uno e un solo record di un'altra tabella. Si realizza ponendo il vincolo UNIQUE sulla foreign key.
+            \paragraph{Uno a molti} A un record di una tabella corrispondono uno o più record di un'altra tabella. Si realizza ponendo il vincolo della foreign key.
+            \paragraph{Molti a molti} A più record di una tabella possono corrispondere più record di un'altra tabella. Per realizzarlo fra due tabelle è necessario introdurre una terza tabella intermedia che leghi la foreign key della prima con la primary key della seconda.
+        \subsubsection{Normalizzazioni}
+            \paragraph{Forma zero} La tabella dispone di chiave primaria.
+            \paragraph{Prima forma normale} La tabella presenta campi atomici, senza tabelle al loro interno. Facendo riferimento al modello E-R, significa che eventuali attributi composti sono stati trasformati in entità, cioè tabelle, a loro volta.
+            \paragraph{Seconda forma normale} In caso la chiave primaria sia composta da più campi, ogni altro campo del record deve essere \textit{funzionalmente dipendente} da essa nella sua sua interezza, e non solo da alcune sue parti.
+            \paragraph{Terza forma normale} Ogni campo di un record deve essere funzionalmente dipendente solo e soltato dalla chiave primaria, in modo diretto.
+            \paragraph{Forma normale di Boyce e Codd} Formulazione leggermente più forte della terza forma normale: ogni campo deve essere funzionalmente dipendente da una super-chiave.
+        \subsection{Costraints}
+            I vincoli sono delle regole che vengono assegnate per garantire l'accuratezza e l'affidabilità di una tabella. Possono essere \textit{column level} oppure \textit{table level}. I vincoli più comuni in SQL sono:
+            \begin{itemize}
+                \item \textit{NOT NULL}: il campo della colonna non può avere valore NULL.
+                \item \textit{UNIQUE}: nella colonna non può esserci lo stesso valore più volte.
+                \item \textit{PRIMARY KEY}: unione dei vincoli NOT NULL e UNIQUE, ve ne è solo uno per tabella.
+                \item \textit{FOREIGN KEY}: associa i valori della colonna a quelli della chiave primaria di un'altra tabella; impedisce la cancellazione della tabella grazie a questo collegamento, se non specificato diversamente. Conosciuto anche come \textit{vincolo di integrità referenziale}.
+                \item \textit{CHECK}: si assicura che i valori in una colonna soddisfino specifiche condizioni.
+                \item \textit{DEFAULT}: assegna un valore di default se il campo non viene valorizzato.
+                \item \textit{CREATE INDEX}: puntatore alla cella che permette il rapido accesso ai dati.
+            \end{itemize}
+        \subsubsection{Big Data - Le cinque V}
+        \subsubsection{Altri concetti}
+            \paragraph{Dipendenza funzionale} In un record di una tabella, un campo è funzionalmente dipendente da un altro campo quando, in presenza di un determinato valore del primo, si ottiene un determinato valore del secondo.
+            \paragraph{NoSQL}
+    \subsection{Sistemi distribuiti}
+        \subsubsection{Hadoop}
+    
+    \section{Fonti}
+        \paragraph{Wikipedia}
+        \paragraph{Stackify}
+        \paragraph{EnjoyAlgorithms}
+        \paragraph{Baeldung}
+            
+            
+            
+
+\end{document}
