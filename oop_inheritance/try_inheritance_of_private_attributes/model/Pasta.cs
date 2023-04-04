@@ -1,7 +1,10 @@
 public class Pasta
 {
-    protected string shape;
-    protected double quantity;
+    //protected string shape;
+    //protected double quantity;
+
+    string shape;
+    double quantity;
 
     public Pasta(string shape, double quantity)
     {

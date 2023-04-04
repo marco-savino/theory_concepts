@@ -45,7 +45,13 @@
             
             \paragraph{I - Inherintance (Ereditarietà)} L'ereditarietà è il meccanismo attraverso cui la definizione di una classe deriva da quella di un'altra classe. La prima prende così il nome di sottoclasse e la seconda di super-classe. La sottoclasse condivide lo stesso formato dei dati e le stesse operazioni della sua super-classe, in base alla loro visibilità, e in più ha la possibilità di definirne dei propri a sua volta. Una classe può ereditare una sola altra classe e un numero illimitato di interfacce.
             
-            \paragraph{E - Encapsulation (Incapsulamento)} Per definizione, l'incapsulamento consiste nel combinare metodi e attributi in un'unica unità, come una classe. Grazie a questo concetto, è possibile nascondere la rappresentazione interna dei dati o il loro stato, rendendoli accessibili solo tramite metodi appositi. Questa tecnica è chiamata \textit{Information Hiding}.
+            \paragraph{E - Encapsulation (Incapsulamento)} Per definizione, l'incapsulamento consiste nel combinare metodi e attributi in un'unica unità, come ad esempio una classe. Grazie a questo concetto, è possibile nascondere la rappresentazione interna dei dati o il loro stato, rendendoli accessibili solo tramite metodi appositi. Questa tecnica è chiamata \textit{Information Hiding}. Nella pratica, un linguaggio orientato agli oggetti può prevedere principalmente quattro modificatori di visibilità per metodi e attributi:
+                \begin{itemize}
+                    \item \textit{Private} - L'elemento è accessibile solo dalla propria classe e nient'altro.
+                    \item \textit{Package-private} - Se non si specifica il modificatore di visibilità, l'elemento è accessibile dalla propria classe e da tutte le classi ed eventuali sottoclassi appartenenti allo stesso pacchetto.
+                    \item \textit{Protected} - L'elemento è accessibile dalla propria classe, dalle classi presenti nello stesso pacchetto e anche dalle sue eventuali sottoclassi presenti in altri pacchetti.
+                    \item \textit{Public} - L'elemento è accessibile da qualunque classe.
+                \end{itemize}
             
         \subsubsection{S.O.L.I.D.}
             Questo acronimo indica un gruppo di cinque principi da seguire, affinché il codice sia più leggibile e più facile da cambiare in caso di necessità.
