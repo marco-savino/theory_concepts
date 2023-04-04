@@ -29,13 +29,18 @@
         \subsubsection{Programmazione orientata agli oggetti}
             La programmazione orientata agli oggetti è un paradigma di programmazione basato sul concetto di oggetto, ovvero un entità che può contenere dati e operazioni. I dati sono contenuti in campi conosciuti come attributi e le operazioni sono codice scritto in forma di procedure chiamate metodi.
             \paragraph{Classi} Per poter applicare il concetto di oggetto, è necessario prima definirlo: un oggetto viene definito attraverso una classe. La classe serve a stabilire il formato dei dati e le operazioni disponibili dell'oggetto creato tramite essa. Gli oggetti sono quindi delle istanze, ovvero la manifestazione fisica dei dati e delle operazioni descritte all'interno nella classe.
-            \paragraph{Data Abstraction} Il Data Abstraction è un design pattern per il quale i dati sono visibili solo alle funzioni con cui sono semanticamente collegati. Di conseguenza, si integra il Data Hiding come principio di design nei linguaggi di programmazione ad oggetti. Ad esempio, in Java si esplicita il grado di visibilità di un attributo o di un metodo attraverso le parole chiave private, protected e public.
-            \paragraph{Astrazione} L'Astrazione è un concetto per il quale si nascondono all'utente i dettagli dell'implementazione, permettendo a questo di concentrarsi sullo sviluppo della logica al di sopra dell'astrazione fornita senza doversi preoccupare della sua implementazione.\\
-            \textit{Esempio - Una macchina del caffè rappresenta un'astrazione per l'utente: questo non sa come viene prodotto fisicamente il caffè, ma conosce quanto basta per comandare alla macchinetta di produrne uno. In questo modo, è persino possibile cambiare il meccanismo interno della macchina senza che l'utente ne debba essere a conoscenza.}
             
-            \paragraph{Polimorfismo} Il polimorfismo consiste nel fornire una stessa interfaccia a entità di tipi differenti, in modo da dare l'impressione che uno stesso oggetto sia in grado di avere funzioni differenti. Ne esistono di tre tipi: il polimorfismo ad-hoc, il polimorfismo parametrico e il polimorfismo di sottotipo (o di inclusione). Il primo si riferisce a funzioni che possono essere applicate a parametri di tipi differenti, ma che si comportano diversamente a seconda di questi: questo concetto è identificato con il termine di \textit{overload}. Quello parametrico permette a un tipo di dato o a una funzione di essere scritto in modo generale, in modo che possa trattare i valori indipendentemente dal loro tipo. L'ultimo, il polimorfismo di sottotipo, enuncia che una sottoclasse può utilizzare un metodo della sua super-classe e questo potrebbe avere un comportamento diverso: ciò viene indicato come \textit{override} del metodo e rimane in accordo con il Principio di Sostituzione di Liskov.
-            \paragraph{Incapsulamento} Per definizione, l'incapsulamento consiste nel combinare metodi e attributi in un'unica unità, come una classe. Grazie a questo concetto, è possibile nascondere la rappresentazione interna dei dati o il loro stato, rendendoli accessibili solo tramite metodi appositi. Questa tecnica è chiamata \textit{Information Hiding}.
-            \paragraph{Ereditarietà} L'ereditarietà è il meccanismo attraverso il quale la definizione di una classe deriva da quella di un'altra classe. La prima prende così il nome di sottoclasse e la seconda di super-classe. La sottoclasse può utilizzare lo stesso formato dei dati e le stesse operazioni della sua super-classe e in più ha la possibilità di definirne dei propri a sua volta.
+            \paragraph{Concetti della Programmazione Orientata agli Oggetti (A. P.I.E.)}
+            I concetti alla base di questo paradigma hanno lo scopo di creare metodi e variabili funzionanti, che permettano poi il riutilizzo del codice senza comprometterne la sicurezza.
+            
+            \paragraph{A - Abstraction (Astrazione)} L'Astrazione è un concetto per il quale si nascondono all'utente i dettagli superflui dell'implementazione, permettendo a questo di concentrarsi sullo sviluppo della logica al di sopra dell'entità astratta fornita senza doversi preoccupare di come è fatta al suo interno.\\
+            \textit{Esempio - Una macchina del caffè rappresenta un'astrazione per l'utente: questo non sa come viene prodotto fisicamente il caffè, ma conosce quanto basta per comandare alla macchinetta di produrne uno. In questo modo, è persino possibile cambiare il meccanismo interno della macchina senza che l'utente ne debba essere a conoscenza.}
+            \paragraph{OLD - P - Polymorphism (Polimorfismo)} Il polimorfismo consiste nel fornire una stessa interfaccia a entità di tipi differenti, in modo da dare l'impressione che uno stesso oggetto sia in grado di avere funzioni differenti. Ne esistono di tre tipi: il polimorfismo ad-hoc, il polimorfismo parametrico e il polimorfismo di sottotipo (o di inclusione). Il primo si riferisce a funzioni che possono essere applicate a parametri di tipi differenti, ma che si comportano diversamente a seconda di questi: questo concetto è identificato con il termine di \textit{overload}. Quello parametrico permette a un tipo di dato o a una funzione di essere scritto in modo generale, in modo che possa trattare i valori indipendentemente dal loro tipo. L'ultimo, il polimorfismo di sottotipo, enuncia che una sottoclasse può utilizzare un metodo della sua super-classe e questo potrebbe avere un comportamento diverso: ciò viene indicato come \textit{override} del metodo e rimane in accordo con il Principio di Sostituzione di Liskov.
+            \paragraph{P - Polymorphism (Polimorfismo)} Il polimorfismo è un fenomeno in cui una stessa entità assume comportamenti differenti a seconda del contesto. Nell'informatica, questo significa poter accedere, in base alla situazione, a diversi oggetti tramite la stessa interfaccia o a diversi metodi tramite la stesso nome. (ToDo: polimorfismo statico e dinamico)
+            \paragraph{I - Inherintance (Ereditarietà)} L'ereditarietà è il meccanismo attraverso il quale la definizione di una classe deriva da quella di un'altra classe. La prima prende così il nome di sottoclasse e la seconda di super-classe. La sottoclasse può utilizzare lo stesso formato dei dati e le stesse operazioni della sua super-classe e in più ha la possibilità di definirne dei propri a sua volta.
+            
+            \paragraph{E - Encapsulation (Incapsulamento)} Per definizione, l'incapsulamento consiste nel combinare metodi e attributi in un'unica unità, come una classe. Grazie a questo concetto, è possibile nascondere la rappresentazione interna dei dati o il loro stato, rendendoli accessibili solo tramite metodi appositi. Questa tecnica è chiamata \textit{Information Hiding}.
+            
         \subsubsection{S.O.L.I.D.}
             Questo acronimo indica un gruppo di cinque principi da seguire, affinché il codice sia più leggibile e più facile da cambiare in caso di necessità.
             \paragraph{S - Single Resposibilty Principle} \textit{Ogni classe è responsabile di un singolo compito; se cambia il compito, allora cambia anche la classe. Questa deve essere l'unica ragione per cui la classe cambia.}\\
@@ -114,6 +119,7 @@
         \subsubsection{Big Data - Le cinque V}
         \subsubsection{Altri concetti}
             \paragraph{Dipendenza funzionale} In un record di una tabella, un campo è funzionalmente dipendente da un altro campo quando, in presenza di un determinato valore del primo, si ottiene un determinato valore del secondo.
+            \paragraph{OLD - Data Abstraction} Il Data Abstraction è un design pattern per il quale i dati sono visibili solo alle funzioni con cui sono semanticamente collegati. Di conseguenza, si integra il Data Hiding come principio di design nei linguaggi di programmazione ad oggetti. Ad esempio, in Java si esplicita il grado di visibilità di un attributo o di un metodo attraverso le parole chiave private, protected e public.
             \paragraph{NoSQL}
     \subsection{Sistemi distribuiti}
         \subsubsection{Hadoop}
@@ -121,6 +127,9 @@
     \section{Fonti}
         \paragraph{Wikipedia}
         \paragraph{Stackify}
+            \begin{itemize}
+                \item https://stackify.com/oops-concepts-in-java/
+            \end{itemize} 
         \paragraph{EnjoyAlgorithms}
         \paragraph{Baeldung}
             
