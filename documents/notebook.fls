@@ -1,8 +1,8 @@
-PWD f:/stuff/back_to_code/theory_concepts
+PWD f:/stuff/back_to_code/theory_concepts/documents
 INPUT c:/texlive/2023/texmf.cnf
 INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT f:/stuff/back_to_code/theory_concepts/notebook.tex
+INPUT f:/stuff/back_to_code/theory_concepts/documents/notebook.tex
 OUTPUT notebook.log
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2023/texmf-dist/tex/latex/base/article.cls
