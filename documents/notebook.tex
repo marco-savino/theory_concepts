@@ -133,7 +133,17 @@
                     Si implementano quindi diverse classi "fabbrica", una per ogni sistema operativo previsto, le quali implementeranno i metodi astratti con il tipo specifico delle diverse entità.
                     Infine, sarà sufficente fornire una istanza della classe "fabbrica" scelta per permettere di creare le istanze delle entità richieste secondo uno stile uniforme.
                 }
-            \paragraph{Builder}
+            \paragraph{Builder} Permette di costruire oggetti complessi procedendo step by step.
+                Il concetto alla base è quello di racchiudere in una classe "Builder" tutti i passi necessari per la costruzione di un oggetto, invece che dover specificare tutto nel costruttore fin da subito o aver diverse classi per ogni sua possibile variante.
+                La classe builder contiene quindi una istanza dell'oggetto, un metodo Get dedicato e tutti i metodi richiesti per la parametrizzazione dell'oggetto.
+                Tuttavia, vi possono anche essere altri modi per costruire oggetti diversi fra loro: si defnisce quindi una interfaccia che racchiude tutte le classi builder, che implementeranno i metodi astratti in base al loro specifico oggetto.
+                Infine, per astrarsi dalla logica dei diversi builder e per stabilire un ordine dei passi da effetuare, si definisce una classe "Director" che li gestisce, nascondendone l'implementazione all'utente.\\
+                \textit{Esempio - Partendo da due classi AutoCambioAutomatico e AutoCambioManuale, si definisce una interfaccia per le loro due classi Builder: queste classi saranno idendiche in tutto tranne che nella costruzione del cambio.
+                    Nel frattempo, si definisce anche una classe Director, la quale avrà diversi metodi preimpostati per la costruzione di auto come berline, SUV o spider.
+                    Si inizializza quindi una istanza della classe builder, in base alla selezione del cambio automatico o manuale.
+                    Si istanzia infine la classe director e si invoca il metodo in base alla tipologia di auto scelta, e gli si passa il builder instanziato per specificare al director come costruire l'auto.
+                }
+
             \paragraph{Singleton}
             \paragraph{Prototype}
         \subsubsection{Pattern Strutturali}
@@ -198,8 +208,6 @@
     
     \subsection{Altri concetti}
         \paragraph{Dipendenza funzionale} In un record di una tabella, un campo è funzionalmente dipendente da un altro campo quando, in presenza di un determinato valore del primo, si ottiene un determinato valore del secondo.
-        \paragraph{OLD - Data Abstraction} Il Data Abstraction è un design pattern per il quale i dati sono visibili solo alle funzioni con cui sono semanticamente collegati. Di conseguenza, si integra il Data Hiding come principio di design nei linguaggi di programmazione ad oggetti. Ad esempio, in Java si esplicita il grado di visibilità di un attributo o di un metodo attraverso le parole chiave private, protected e public.
-        \paragraph{OLD - P - Polymorphism (Polimorfismo)} Il polimorfismo consiste nel fornire una stessa interfaccia a entità di tipi differenti, in modo da dare l'impressione che uno stesso oggetto sia in grado di avere funzioni differenti. Ne esistono di tre tipi: il polimorfismo ad-hoc, il polimorfismo parametrico e il polimorfismo di sottotipo (o di inclusione). Il primo si riferisce a funzioni che possono essere applicate a parametri di tipi differenti, ma che si comportano diversamente a seconda di questi: questo concetto è identificato con il termine di \textit{overload}. Quello parametrico permette a un tipo di dato o a una funzione di essere scritto in modo generale, in modo che possa trattare i valori indipendentemente dal loro tipo. L'ultimo, il polimorfismo di sottotipo, enuncia che una sottoclasse può utilizzare un metodo della sua super-classe e questo potrebbe avere un comportamento diverso: ciò viene indicato come \textit{override} del metodo e rimane in accordo con il Principio di Sostituzione di Liskov.
         \paragraph{NoSQL}
 
 \section{Sistemi distribuiti}
@@ -227,6 +235,7 @@
         \end{itemize} 
     \paragraph{EnjoyAlgorithms}
     \paragraph{Baeldung}
+    \paragraph{Refactoring Guru}
             
             
             
