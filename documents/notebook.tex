@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{AgileLab}
+\title{Appunti di teoria per interviste tecniche}
 \author{Marco Savino}
 \date{}
 
@@ -68,6 +68,7 @@
         \paragraph{D - Dependency Inversion Principle} 
             \textit{Moduli di altro livello non devono dipendere da moduli di basso livello, ed entrambi devono basarsi su astrazioni; le astrazioni non devono dipendere dai dettagli, ma i dettagli dalle astrazioni.}\\
             Si dà importanza al disaccoppiamento fra moduli: l'implementazione di questi potrà cambiare senza influire sulla loro comunicazione. A livello pratico, si applica la cosiddetta \textit{Dependency Injection}.
+
     \subsection{Sviluppo software}
         \paragraph{Ciclo di vita del software} il \textit{Software Development Life Cycle} viene definito con 6 fasi:
             \begin{enumerate}
@@ -101,8 +102,37 @@
 
     \subsection{Design Pattern}
         \subsubsection{Pattern Creazionali}
-            \paragraph{Factory}
-            \paragraph{Abstract Factory}
+            I pattern creazionali forniscono diversi meccanismi per la creazione degli oggetti, puntando a migliorare la flessibilità e il riutilizzo del codice.
+            \paragraph{Factory} Viene applicato per disaccoppiare il codice di costruzione dell'oggetto dal codice in cui viene utilizzato quell'oggetto, seguendo il Single Resposibilty Principle e Open-Closed Principle.
+                I passi per impostare il pattern Factory sono i seguenti:
+                \begin{enumerate}
+                    \item Si definisce un'interfaccia a partire dagli oggetti da istanziare
+                    \item Si crea una classe astratta contenente un metodo astratto che restituisce il tipo dell'interfaccia degli oggetti
+                    \item Si creano tante classi "fabbrica" quanti sono gli oggetti in questione e ognuna di queste erediterà la classe astratta
+                    \item Ogni classe "fabbrica" implementa il metodo astratto per restituire una istanza dello specifico oggetto per cui la classe è stata creata
+                    \item Per creare un oggetto in particolare, invece di invocarne il costruttore, verrà chiamato il metodo della sua classe "fabbrica" che ne restituirà uno. 
+                \end{enumerate}
+                \textit{Esempio - Esistono le classi Auto e Moto: queste possono essere implementazioni di una nuova o già esistente interfaccia Veicolo.
+                    Si crea quindi una classe astratta FabbricaVeicolo che conterrà il metodo astratto creaVeicolo().
+                    Questa classe viene ereditata da due sottoclassi, FabbricaAuto e FabbricaMoto, nelle quali il metodo creaVeicolo() restituirà rispettivamente una istanza di Auto e una di Moto, entrambe di tipo Veicolo.
+                    Infine, si inizializza una istanza di FabbricaVeicolo come FabbricaAuto o FabbricaMoto, in base alle necessità.
+                    In questo modo, è possibile passare a chi lo richiede l'istanza di tipo FabbricaVeicolo in modo del tutto indipendente da ciò che contiene, e potrà utilizzarne il metodo creaVeicolo() per ottenere un'istanza definita a run-time.
+                }
+            \paragraph{Abstract Factory} Il concetto di base è lo stesso del pattern Factory, ma con la differenza che le classi da istanziare sono classi "fabbrica".
+                I passi da seguire per implementare il pattern sono i seguenti:
+                \begin{enumerate}
+                    \item Definire una interfaccia per ogni categoria di oggetti che le classi "fabbrica" si occuperanno di creare
+                    \item Creare una interfaccia per le classi "fabbrica" con i metodi astratti di creazione degli oggetti, ciascuno del tipo astratto prima definito
+                    \item Implementare le classi "fabbrica" con l'interfaccia definita, implementando i metodi astratti secondo la tipologia effettiva di oggetto corrispondente alla classe stessa
+                    \item Creare una istanza della classe "fabbrica" scelta
+                    \item Per creare un oggetto specifico, sarà sufficiente invocare il metodo apposito, la cui chiamata sarà indipendente dal tipo di classe "fabbrica" e dall'oggetto scelto
+                \end{enumerate}
+                \textit{Esempio - Vi è la necessità di creare entità come pulsanti o checkbox in base allo stile del sistema operativo presente.
+                    Si definisce quindi una interfaccia i pulsanti, una per le checkbox e in generale una per ogni entità simile.
+                    Si crea poi una interfaccia per le classi "fabbrica", contentente i metodi astratti per la creazione delle entità, del tipo della rispettiva interfaccia.
+                    Si implementano quindi diverse classi "fabbrica", una per ogni sistema operativo previsto, le quali implementeranno i metodi astratti con il tipo specifico delle diverse entità.
+                    Infine, sarà sufficente fornire una istanza della classe "fabbrica" scelta per permettere di creare le istanze delle entità richieste secondo uno stile uniforme.
+                }
             \paragraph{Builder}
             \paragraph{Singleton}
             \paragraph{Prototype}
@@ -127,6 +157,7 @@
                 
     \subsection{Strutture dati}
         \paragraph{Binary Tree}
+    
     \subsection{Altri concetti}
         \paragraph{Dependency Injection} A partire da un'interfaccia, che ha un livello di astrazione più alto di una classe, si applica la dipendenza, ovvero la classe che la implementa. La dipendenza può cambiare senza che l'interfaccia ne risenta, persino a run-time. In questo caso, si parla di \textbf{Binding Dinamico}.
         \paragraph{Inversion of Control} Principio di programmazione secondo cui il controllo del flusso dello sviluppo di una applicazione viene lasciato alla piattaforma che si utilizza, la quale prende il nome di \textbf{framework}. I vantaggi pirncipali consistono nel riutilizzo del codice e nel permettere all'utente di concentrarsi sull'implementazione dei moduli, piuttosto che sulla loro comunicazione. La Dependency Injection è un modo di implementare il principio di Inversion of Control.
@@ -138,17 +169,20 @@
         \paragraph{C - Consistency} La transazione deve rispettare i vincoli di integrità del database.
         \paragraph{I - Isolation} Una transazione deve essere eseguita in modo isolato e indipendente dalle altre.
         \paragraph{D - Durability} Definibile anche come \textit{persistenza}, implica che, una volta che la transazione abbia effettuato una \textit{commit}, i cambiamenti apportati devono essere conservati. 
+    
     \subsection{Relazioni}
         \paragraph{Uno a uno} A un record di una tabella, corrisponde uno e un solo record di un'altra tabella. Si realizza ponendo il vincolo UNIQUE sulla foreign key.
         \paragraph{Uno a molti} A un record di una tabella corrispondono uno o più record di un'altra tabella. Si realizza ponendo il vincolo della foreign key.
         \paragraph{Molti a molti} A più record di una tabella possono corrispondere più record di un'altra tabella. Per realizzarlo fra due tabelle è necessario introdurre una terza tabella intermedia che leghi la foreign key della prima con la primary key della seconda.
+    
     \subsection{Normalizzazioni}
         \paragraph{Forma zero} La tabella dispone di chiave primaria.
         \paragraph{Prima forma normale} La tabella presenta campi atomici, senza tabelle al loro interno. Facendo riferimento al modello E-R, significa che eventuali attributi composti sono stati trasformati in entità, cioè tabelle, a loro volta.
         \paragraph{Seconda forma normale} In caso la chiave primaria sia composta da più campi, ogni altro campo del record deve essere \textit{funzionalmente dipendente} da essa nella sua sua interezza, e non solo da alcune sue parti.
         \paragraph{Terza forma normale} Ogni campo di un record deve essere funzionalmente dipendente solo e soltato dalla chiave primaria, in modo diretto.
         \paragraph{Forma normale di Boyce e Codd} Formulazione leggermente più forte della terza forma normale: ogni campo deve essere funzionalmente dipendente da una super-chiave.
-    \section{Costraints}
+    
+    \subsection{Costraints}
         I vincoli sono delle regole che vengono assegnate per garantire l'accuratezza e l'affidabilità di una tabella. Possono essere \textit{column level} oppure \textit{table level}. I vincoli più comuni in SQL sono:
         \begin{itemize}
             \item \textit{NOT NULL}: il campo della colonna non può avere valore NULL.
@@ -159,12 +193,15 @@
             \item \textit{DEFAULT}: assegna un valore di default se il campo non viene valorizzato.
             \item \textit{CREATE INDEX}: puntatore alla cella che permette il rapido accesso ai dati.
         \end{itemize}
+    
     \subsection{Big Data - Le cinque V}
+    
     \subsection{Altri concetti}
         \paragraph{Dipendenza funzionale} In un record di una tabella, un campo è funzionalmente dipendente da un altro campo quando, in presenza di un determinato valore del primo, si ottiene un determinato valore del secondo.
         \paragraph{OLD - Data Abstraction} Il Data Abstraction è un design pattern per il quale i dati sono visibili solo alle funzioni con cui sono semanticamente collegati. Di conseguenza, si integra il Data Hiding come principio di design nei linguaggi di programmazione ad oggetti. Ad esempio, in Java si esplicita il grado di visibilità di un attributo o di un metodo attraverso le parole chiave private, protected e public.
         \paragraph{OLD - P - Polymorphism (Polimorfismo)} Il polimorfismo consiste nel fornire una stessa interfaccia a entità di tipi differenti, in modo da dare l'impressione che uno stesso oggetto sia in grado di avere funzioni differenti. Ne esistono di tre tipi: il polimorfismo ad-hoc, il polimorfismo parametrico e il polimorfismo di sottotipo (o di inclusione). Il primo si riferisce a funzioni che possono essere applicate a parametri di tipi differenti, ma che si comportano diversamente a seconda di questi: questo concetto è identificato con il termine di \textit{overload}. Quello parametrico permette a un tipo di dato o a una funzione di essere scritto in modo generale, in modo che possa trattare i valori indipendentemente dal loro tipo. L'ultimo, il polimorfismo di sottotipo, enuncia che una sottoclasse può utilizzare un metodo della sua super-classe e questo potrebbe avere un comportamento diverso: ciò viene indicato come \textit{override} del metodo e rimane in accordo con il Principio di Sostituzione di Liskov.
         \paragraph{NoSQL}
+
 \section{Sistemi distribuiti}
     Un sistema distribuito è un insieme di componenti che comunicano e coordinano le loro azioni attraverso lo scambio di messaggi.
     \subsection{Caratteristiche dei sistemi distribuiti}
