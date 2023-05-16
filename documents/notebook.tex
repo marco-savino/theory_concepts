@@ -143,9 +143,18 @@
                     Si inizializza quindi una istanza della classe builder, in base alla selezione del cambio automatico o manuale.
                     Si istanzia infine la classe director e si invoca il metodo in base alla tipologia di auto scelta, e gli si passa il builder instanziato per specificare al director come costruire l'auto.
                 }
-
-            \paragraph{Singleton}
-            \paragraph{Prototype}
+            \paragraph{Singleton} Assicura che venga creata una sola istanza di una certa classe, che viene resa accessibile globalmente.
+                Durante l'implementazione della classe, il costruttore viene reso privato.
+                Affinché quindi la classe sia utilizzabile, viene definito un metodo statico pubblico e un attributo statico privato del tipo della classe stessa.
+                Quando il metodo pubblico viene invocato per la prima volta, l'attributo risulta nullo: si procede quindi alla sua inizializzazione e alla restituzione al chiamante.
+                Se il metodo viene chiamato successivamente, questo si accorgerà che l'istanza esiste già, perciò la ritornerà direttamente, senza crearne una nuova.\\
+                \textit{Esempio - Nel momento in cui bisogan aprire una connessione ad un database, è utile che questa venga istanziata una sola volta, per poi continuare a riferirsi ad essa.
+                    Se il metodo statico pubblico GetConnection() viene chiamato per la prima volta e l'attributo Database risulta nullo, si procede ad aprire la connessione per poi ritornarla.
+                    Altrimenti, viene restituito direttamente l'attributo Database, già istanziato.
+                }  
+            \paragraph{Prototype} Permette di creare una \textit{deep copy} di oggetti esistenti senza rendere il codice dipendente dalla loro classe.
+                Dipende molto dal linguaggio di programmazione, ma l'idea generale è quella di avere un metodo dedicato che crei una nuova istanza della classe copiandone i paramentri, imposto anche tramite una interfaccia spesso nominata "Clonable".
+                Risulta importante rispetto alla creazione di una \textit{shallow copy} perché permette di modificarne i parametri senza influenzare l'oggetto originale. 
         \subsubsection{Pattern Strutturali}
             \paragraph{Adapter}
             \paragraph{Bridge}
