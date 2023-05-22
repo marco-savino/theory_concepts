@@ -1,5 +1,7 @@
 \documentclass{article}
+\usepackage{graphicx}
 \usepackage[utf8]{inputenc}
+\graphicspath{ {./img/} }
 
 \title{Appunti di teoria per interviste tecniche}
 \author{Marco Savino}
@@ -155,15 +157,46 @@
             \paragraph{Prototype} Permette di creare una \textit{deep copy} di oggetti esistenti senza rendere il codice dipendente dalla loro classe.
                 Dipende molto dal linguaggio di programmazione, ma l'idea generale è quella di avere un metodo dedicato che crei una nuova istanza della classe copiandone i paramentri, imposto anche tramite una interfaccia spesso nominata "Clonable".
                 Risulta importante rispetto alla creazione di una \textit{shallow copy} perché permette di modificarne i parametri senza influenzare l'oggetto originale. 
+        
         \subsubsection{Pattern Strutturali}
-            \paragraph{Adapter}
-            \paragraph{Bridge}
-            \paragraph{Composite}
-            \paragraph{Decorator}
-            \paragraph{Facade}
-            \paragraph{Flyweight}
-            \paragraph{Proxy}
+            \paragraph{Adapter} Permette a oggetti con diverse interfacce di comunicare.
+                Si realizza attraverso una classe Adapter che eredita la interfaccia richiesta dal client e continene al suo interno una istanza del Service.
+                Inoltre, al suo interno viene implementato tutto il necessario per rendere compatibili le comunicazioni fra client e service.
+                \textit{Esempio - Un provider di dati stock fornisce i dati in formato XML, ma le librerie per analizzare tali dati accettano solo il formato JSON.
+                    Si implementa quindi una classe che implementa l'interfaccia del provider, in grado di richiedere i dati.
+                    Nella stessa classe si utilizza un metodo per poter convertire i dati da XML a JSON, in modo tale da poter utilizzare le istanze delle librerie correttamente.
+                }
+            \paragraph{}\includegraphics[scale=0.25]{./img/adapter.png}
+
+            \paragraph{Bridge} Punta a suddividere classi complesse o un insieme di classi fortemente correlate in due gerarchie di classi, dette \textit{astrazione} e \textit{implementazione}, indipendenti tra loro.\\
+                \textit{Esempio - Allo stato attuale, esistono la classe TelecomandoTV correlata alla classe TV e la classe TelecomandoStereo correlata alla classe Stereo.
+                    Applicando il pattern Bridge, si pensa ad una classe Telecomando come \textit{astrazione} ed a una interfaccia Dispositivo come \textit{implementazione}, predisposte con metodi correlati e prestabiliti.
+                    In questo modo, la classe Telecomando sostituisce le due classi distinte TelecomandoTV e TelecomandoStereo e, in caso di necessità, può essere ereditata ed espansa con ulteriori funzionalità.
+                    Questa classe ha inoltre una istanza di Dispositivo, interfaccia a sua volta implementata da TV e Stereo.
+                    In questo modo, è possibile modificare Telecomando o le classi concrete come TV e Stereo in modo del tutto indipendente le une dalle altre.
+                }
+            \paragraph{}\includegraphics[scale=0.25]{./img/bridge.png}
+                
+            \paragraph{Composite} Permette di organizzare gli oggetti in strutture ad albero, per poi trattarli come una unica entità.
+                Si crea una interfaccia che viene implementata sia dalle \textit{foglie} appartententi al albero che dai \textit{rami}.
+                In questo modo, un ramo può contenere una lista di istanze del tipo dell'interfaccia, a prescindere che siano foglie o altri rami.             
+            \paragraph{}\includegraphics[scale=0.25]{./img/composite.png}
+            
+            \paragraph{Decorator} Permette di aggiungere nuove funzionalità agli oggetti inserendoli dentro degli oggetti \textit{wrapper}, che contengono le funzionalità richieste.
+            \paragraph{}\includegraphics[scale=0.5]{./img/decorator.png}
+
+            \paragraph{Facade} Fornisce una interfaccia semplificata per utilizzare un qualsiasi isnieme complesso di classi.
+            \paragraph{}\includegraphics[scale=0.5]{./img/facade.png}
+
+            \paragraph{Flyweight} Aiuta a ottimizzare l'utilizzo di RAM grazie alla condivisioni di elementi comuni fra diversi oggetti invece che tenerli separati e ripetuti oggetto per oggetto.
+            \paragraph{}\includegraphics[scale=0.5]{./img/flyweight.png}
+
+            \paragraph{Proxy} Fornisce un sostituto detto \textit{proxy} per un altro oggetto.
+                Un proxy gestisce l'accesso all'oggetto originale, permettendo quindi di gestire le richieste.
+            \paragraph{}\includegraphics[scale=0.6]{./img/proxy.png}
+                
         \subsubsection{Pattern Comportamentali}
+        
             \paragraph{Chain of Resposibilty}
             \paragraph{Command}
             \paragraph{Iterator}
