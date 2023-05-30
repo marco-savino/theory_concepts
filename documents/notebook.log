@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.3)  22 MAY 2023 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.3)  30 MAY 2023 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -116,49 +116,50 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 12.
  [1
 
-{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2] [3]
-Overfull \hbox (1.32855pt too wide) in paragraph at lines 68--70
+{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (1.32855pt too wide) in paragraph at lines 51--53
  \OT1/cmr/bx/n/10 I - In-ter-face Seg-re-ga-tion Prin-ci-ple[] \OT1/cmr/m/it/10 "Un cliente non dovrebbe es-sere costret-
  []
 
-[4] [5] [6] [7]
-<./img/adapter.png, id=32, 1164.35pt x 642.4pt>
+[3] [4] [5] [6]
+<./img/adapter.png, id=28, 1164.35pt x 642.4pt>
 File: ./img/adapter.png Graphic file (type png)
 <use ./img/adapter.png>
-Package pdftex.def Info: ./img/adapter.png  used on input line 169.
+Package pdftex.def Info: ./img/adapter.png  used on input line 152.
 (pdftex.def)             Requested size: 291.08679pt x 160.59961pt.
- [8 <./img/adapter.png>]
-<./img/bridge.png, id=37, 1284.8pt x 963.6pt>
+ [7]
+<./img/bridge.png, id=33, 1284.8pt x 963.6pt>
 File: ./img/bridge.png Graphic file (type png)
 <use ./img/bridge.png>
-Package pdftex.def Info: ./img/bridge.png  used on input line 178.
+Package pdftex.def Info: ./img/bridge.png  used on input line 161.
 (pdftex.def)             Requested size: 321.19922pt x 240.89941pt.
+ [8 <./img/adapter.png>]
 <./img/composite.png, id=38, 722.7pt x 883.3pt>
 File: ./img/composite.png Graphic file (type png)
 <use ./img/composite.png>
-Package pdftex.def Info: ./img/composite.png  used on input line 183.
+Package pdftex.def Info: ./img/composite.png  used on input line 166.
 (pdftex.def)             Requested size: 180.67455pt x 220.82446pt.
  [9 <./img/bridge.png>]
 <./img/decorator.png, id=43, 481.8pt x 521.95pt>
 File: ./img/decorator.png Graphic file (type png)
 <use ./img/decorator.png>
-Package pdftex.def Info: ./img/decorator.png  used on input line 186.
+Package pdftex.def Info: ./img/decorator.png  used on input line 169.
 (pdftex.def)             Requested size: 240.8994pt x 260.97435pt.
  [10 <./img/composite.png> <./img/decorator.png>]
 <./img/facade.png, id=49, 562.1pt x 381.425pt>
 File: ./img/facade.png Graphic file (type png)
 <use ./img/facade.png>
-Package pdftex.def Info: ./img/facade.png  used on input line 189.
+Package pdftex.def Info: ./img/facade.png  used on input line 172.
 (pdftex.def)             Requested size: 281.04932pt x 190.71202pt.
 <./img/flyweight.png, id=50, 642.4pt x 391.4625pt>
 File: ./img/flyweight.png Graphic file (type png)
 <use ./img/flyweight.png>
-Package pdftex.def Info: ./img/flyweight.png  used on input line 192.
+Package pdftex.def Info: ./img/flyweight.png  used on input line 175.
 (pdftex.def)             Requested size: 321.19922pt x 195.73076pt.
 <./img/proxy.png, id=51, 371.3875pt x 371.3875pt>
 File: ./img/proxy.png Graphic file (type png)
 <use ./img/proxy.png>
-Package pdftex.def Info: ./img/proxy.png  used on input line 196.
+Package pdftex.def Info: ./img/proxy.png  used on input line 179.
 (pdftex.def)             Requested size: 222.83421pt x 222.83421pt.
  [11 <./img/facade.png> <./img/flyweight.png>] [12 <./img/proxy.png>] [13] [14] [15] [16] (./notebook.aux) ) 
 Here is how much of TeX's memory you used:
@@ -168,9 +169,9 @@ Here is how much of TeX's memory you used:
  22443 multiletter control sequences out of 15000+600000
  517223 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,6n,67p,1080b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 62i,6n,67p,1112b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on notebook.pdf (16 pages, 431800 bytes).
+Output written on notebook.pdf (16 pages, 431102 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
